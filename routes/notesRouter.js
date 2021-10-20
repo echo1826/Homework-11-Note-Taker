@@ -1,5 +1,6 @@
 const notes = require('express').Router();
 const {readFromFile, readAppend} = require('../helper/fsHelper');
+const ShortUniqueId = require('short-unique-id');
 
 notes.get('/', (req, res) => {
     console.log(`${req.method} received`);
@@ -11,11 +12,12 @@ notes.get('/', (req, res) => {
 
 notes.post('/', (req, res) => {
     console.log(`${req.method} received`);
-    console.log(req.body);
+    // console.log(req.body);
     const {title, text} = req.body;
     if(title && text) {
-        const newNote = {title, text};
-
+        const uid = new ShortUniqueId({length:4})
+        const newNote = {title, text, noteId: uid()};
+        console.log(newNote);
         readAppend(newNote, './db/db.json');
 
         const response = {
@@ -31,7 +33,7 @@ notes.post('/', (req, res) => {
 
 notes.delete('/:id', (req, res) => {
     console.log(`${req.method} received`);
-    res.send(`${req.method} received`)
+    res.send(`${req.method} received`);
 });
 
 module.exports = notes;
