@@ -41,8 +41,10 @@ notes.delete('/:id', (req, res) => {
             dbArr = JSON.parse(data);
             filteredDbArr.push(...dbArr.filter((obj) => obj.id !== noteId))
             writeToFile('./db/db.json', filteredDbArr);
+            res.json(filteredDbArr);
         })
-        res.json(filteredDbArr);
+    }else {
+        res.json("Error in deleting note");
     }
 });
 
