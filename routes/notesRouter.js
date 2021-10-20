@@ -16,7 +16,7 @@ notes.post('/', (req, res) => {
     const {title, text} = req.body;
     if(title && text) {
         const uid = new ShortUniqueId({length:4})
-        const newNote = {title, text, noteId: uid()};
+        const newNote = {title, text, id: uid()};
         console.log(newNote);
         readAppend(newNote, './db/db.json');
 
@@ -34,6 +34,7 @@ notes.post('/', (req, res) => {
 notes.delete('/:id', (req, res) => {
     console.log(`${req.method} received`);
     res.send(`${req.method} received`);
+    // TODO: readFile, filter array (note.id !== :id), return new array
 });
 
 module.exports = notes;

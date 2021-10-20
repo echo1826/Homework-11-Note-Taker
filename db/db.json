@@ -1,12 +1,12 @@
 [
     {
-        "title": "test post",
-        "text": "test post",
-        "noteId": "HSA5"
+        "title": "testing post",
+        "text": "testing post",
+        "id": "BfPU"
     },
     {
-        "title": "post uid",
-        "text": "post uid",
-        "noteId": "oKGV"
+        "title": "testing post again",
+        "text": "testing post again",
+        "id": "Ceo4"
     }
 ]
