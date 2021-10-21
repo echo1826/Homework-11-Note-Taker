@@ -1,7 +1,8 @@
 # Homework-11-Note-Taker-DB
-https://ec-note-taker.herokuapp.com/
+
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 # Table of Contents
+
 1. [Description](#description)<br>
 2. [Installation](#installation)<br>
 3. [Deployment](#deployment)<br>
