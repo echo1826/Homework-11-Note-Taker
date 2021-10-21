@@ -39,7 +39,7 @@ notes.delete('/:id', (req, res) => {
         const filteredDbArr = [];
         readFromFile('./db/db.json').then((data) => {
             dbArr = JSON.parse(data);
-            filteredDbArr.push(...dbArr.filter((obj) => obj.id !== noteId))
+            filteredDbArr.push(...dbArr.filter((obj) => obj.id !== noteId));
             writeToFile('./db/db.json', filteredDbArr);
             res.json(filteredDbArr);
         })
