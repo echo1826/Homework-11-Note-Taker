@@ -15,7 +15,7 @@ notes.post('/', (req, res) => {
     // console.log(req.body);
     const {title, text} = req.body;
     if(title && text) {
-        const uid = new ShortUniqueId({length:4})
+        const uid = new ShortUniqueId({length:4});
         const newNote = {title, text, id: uid()};
         console.log(newNote);
         readAppend(newNote, './db/db.json');
@@ -39,7 +39,7 @@ notes.delete('/:id', (req, res) => {
         const filteredDbArr = [];
         readFromFile('./db/db.json').then((data) => {
             dbArr = JSON.parse(data);
-            filteredDbArr.push(...dbArr.filter((obj) => obj.id !== noteId));
+            filteredDbArr.push(...dbArr.filter((obj) => obj.id != noteId));
             writeToFile('./db/db.json', filteredDbArr);
             res.json(filteredDbArr);
         })
