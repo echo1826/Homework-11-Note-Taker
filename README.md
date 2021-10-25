@@ -47,7 +47,7 @@ node server.js
 ```
 After that, you can navigate to the web browser and type the url:
 ```
-http://localhost:3000
+http://localhost:3001
 ```
 
 # Contributing
